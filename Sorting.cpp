@@ -131,7 +131,6 @@ void merge(vector<int>& arr, int l, int m, int r) {
 
 void mergeSort(vector<int>& arr, int l, int r) {
     if (l < r) {
-        // Same as (l+r)/2, but avoids overflow for large l and h
         int m = l + (r - l) / 2;
 
         // Sort first and second halves
@@ -231,13 +230,6 @@ int main() {
 
         cout << "Array size: " << size << "\n";
         vector<int> copy = arr;
-
-        /*testSort([&](vector<int>& a) { insertionSort(a); }, "Insertion Sort", arr);
-        arr = copy;
-        testSort([&](vector<int>& a) { selectionSort(a); }, "Selection Sort", arr);
-        arr = copy;
-        testSort([&](vector<int>& a) { bubbleSort(a); }, "Bubble Sort", arr);
-        arr = copy;*/
 
         if (size <= 100000) {
             testSort([&](vector<int>& a) { insertionSort(a); }, "Insertion Sort", arr);
